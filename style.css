@@ -43,7 +43,7 @@ nav ul li a {
 
 .right-image {
     float: right;
-    max-width: 300px; /* You can adjust this value */
+    max-width: 65%; /* You can adjust this value */
     margin-left: 20px; /* Add some space between the image and the text */
 }
 
