@@ -1,0 +1,77 @@
+/* Reset some default styles in the browser */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Style the header */
+header {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Style the title */
+header h1 {
+    margin-bottom: 0.5em;
+}
+
+/* Style the navigation menu */
+nav ul {
+    background: #35424a;
+    text-align: center;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+.right-image {
+    float: right;
+    max-width: 300px; /* You can adjust this value */
+    margin-left: 20px; /* Add some space between the image and the text */
+}
+
+
+
+a {
+    color:inherit;
+}
+a:visited {
+    color: inherit;
+}
+
+
+/* Add padding to sections */
+section {
+    padding: 20px;
+}
+
+/* Style the article */
+article h3 {
+    border-bottom: #35424a 3px solid;
+    padding-bottom: 10px;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #35424a;
+    color: white;
+}
