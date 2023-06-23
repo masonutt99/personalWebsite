@@ -40,6 +40,15 @@ nav ul li a {
     font-weight: bold;
     padding: 0.5em;
 }
+
+.right-image {
+    float: right;
+    max-width: 300px; /* You can adjust this value */
+    margin-left: 20px; /* Add some space between the image and the text */
+}
+
+
+
 a {
     color:inherit;
 }
