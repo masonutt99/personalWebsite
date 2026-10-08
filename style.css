@@ -1,5 +1,8 @@
 /* Reset some default styles in the browser */
-body, h1, h2, h3, p, ul, li {
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, p, ul, li, figure {
     margin: 0;
     padding: 0;
 }
@@ -8,7 +11,16 @@ body, h1, h2, h3, p, ul, li {
 body {
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    font-size: 18px;
     line-height: 1.6;
+    color: #222;
+}
+
+/* Images never overflow their container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Style the header */
@@ -16,63 +28,101 @@ header {
     background: #35424a;
     color: #ffffff;
     text-align: center;
-    padding: 1em 0;
+    padding: 1em 1em 0.5em;
 }
 
 /* Style the title */
 header h1 {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
 }
 
 /* Style the navigation menu */
 nav ul {
     background: #35424a;
-    text-align: center;
-}
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em 1em;
 }
 nav ul li a {
+    display: inline-block;
+    min-height: 44px;
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
-    padding: 0.5em;
-}
-
-.right-image {
-    float: right;
-    max-width: 65%; /* You can adjust this value */
-    margin-left: 20px; /* Add some space between the image and the text */
-}
-
-.image-container {
-    /* background-color: white; */
-    /* position: fixed; */
-    /* bottom: 0; */
-    width: 50%;
-    text-align: center;
-    padding: 30px 0;
-}
-
-.image-container img {
-    /* margin: 0 5%; */
-    max-width: 20%;
-    height: auto;
+    padding: 0.25em 0.75em;
 }
 
 a {
-    color:inherit;
+    color: inherit;
 }
 a:visited {
     color: inherit;
 }
 
+/* Centered page content */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 /* Add padding to sections */
 section {
-    padding: 20px;
+    padding: 24px 0;
+}
+
+section h2 {
+    margin-bottom: 0.5em;
+}
+
+section p {
+    margin-bottom: 0.75em;
+}
+
+/* Home page photos: column widths follow each photo's aspect ratio
+   (4:3 selfie, 3:4 wedding photo) so both display at the same height */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 4fr 2.25fr;
+    gap: 24px;
+    align-items: start;
+    margin-top: 24px;
+}
+.photo img {
+    width: 100%;
+}
+.photo figcaption {
+    font-style: italic;
+    padding-top: 0.5em;
+}
+
+/* About page logo row */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 30px 0;
+}
+.image-container a {
+    display: block;
+    flex: 0 1 140px;
+}
+.image-container img {
+    width: 100%;
+}
+
+/* Contact page links */
+#contact ul {
+    padding-left: 1.25em;
+}
+#contact li a {
+    display: inline-block;
+    padding: 0.35em 0;
 }
 
 /* Style the article */
@@ -88,20 +138,25 @@ footer {
     background: #35424a;
     color: white;
 }
-.wedding {
-    clear: both;
-    padding: 20px;
-}
-.wedding figure {
-    margin: 0;
-    max-width: 450px;
-}
-.wedding img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.wedding figcaption {
-    font-style: italic;
-    padding-top: 0.5em;
+
+/* Mobile: single column, full-width images */
+@media (max-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+    .container {
+        padding: 0 16px;
+    }
+    nav ul li a {
+        font-size: 1.2em;
+    }
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    .image-container {
+        gap: 16px;
+    }
+    .image-container a {
+        flex-basis: 38%;
+    }
 }
